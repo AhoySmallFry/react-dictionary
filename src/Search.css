@@ -1,0 +1,18 @@
+:root {
+  --bg-color: #eac7c0;
+  --div-color: #ffe7e7;
+  --header-color: #703a57;
+  --text-color: #6c6e72;
+  --yellow: #f4c489;
+  --blue: #6e82bf;
+  --green: #bbba99;
+  --orange: #f2ae80;
+  --light-pink: #eac7c0;
+  --dark-pink: #dd9293;
+}
+
+.dictionary {
+  margin: 30px 0px 0px 0px;
+  color: var(--text-color);
+  font-family: "Poppins", "Montserrat", Helvetica, sans-serif;
+}
