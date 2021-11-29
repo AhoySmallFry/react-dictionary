@@ -15,7 +15,8 @@ export default function Results(props) {
             </div>
           );
         })}
-
+        <br />
+        <hr />
         {props.data.meanings.map(function (meaning, index) {
           return (
             <div key={index}>

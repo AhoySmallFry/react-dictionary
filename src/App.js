@@ -6,15 +6,14 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <header className="App-header">
-          <img src={AhoyLogo} className="App-logo" alt="logo" />
-        </header>
+        <img src={AhoyLogo} className="App-logo" alt="logo" />
+        <header className="App-header">Dictionary</header>
 
         <main>
-          <Search />
+          <Search defaultSearchTerm="promising" />
         </main>
 
-        <footer className="App-footer">
+        <footer className="Footer">
           <small>Coded by Jordana Makin</small>
         </footer>
       </div>

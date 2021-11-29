@@ -2,12 +2,19 @@
   max-width: 500px;
 }
 
+.App-logo {
+  display: block;
+  position: relative;
+  left: -500px;
+  width: 200px;
+}
+
 .App-header {
   color: #3f3120;
   font-family: "Quicksand", sans-serif;
   font-size: 60px;
   text-align: center;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 body {

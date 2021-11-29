@@ -3,14 +3,13 @@ import "./Search.css";
 import axios from "axios";
 import Results from "./Results";
 
-export default function Search() {
-  let [searchTerm, setsearchTerm] = useState("");
+export default function Search(props) {
+  console.log(props.defaultSearchTerm);
+  let [searchTerm, setsearchTerm] = useState(props.defaultSearchTerm);
   let [results, setResults] = useState(null);
 
   function handleResponse(response) {
-    console.log(response.data[0]);
     setResults(response.data[0]);
-    console.log(response.data[0].meanings[0].definitions[0].definition);
   }
 
   function LookUp(event) {
@@ -28,7 +27,8 @@ export default function Search() {
       <form onSubmit={LookUp}>
         <input
           type="search"
-          autoFocus={true}
+          placeholder="Find meaning..."
+          autoComplete="off"
           onChange={handleSearchTermChange}
         />
       </form>
