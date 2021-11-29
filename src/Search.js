@@ -32,7 +32,9 @@ export default function Search() {
           onChange={handleSearchTermChange}
         />
       </form>
-      <Results data={results} />
+      <div className="card">
+        <Results data={results} />
+      </div>
     </div>
   );
 }

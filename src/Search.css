@@ -1,18 +1,34 @@
-:root {
-  --bg-color: #eac7c0;
-  --div-color: #ffe7e7;
-  --header-color: #703a57;
-  --text-color: #6c6e72;
-  --yellow: #f4c489;
-  --blue: #6e82bf;
-  --green: #bbba99;
-  --orange: #f2ae80;
-  --light-pink: #eac7c0;
-  --dark-pink: #dd9293;
+@media only screen and (max-width: 500px) {
+  .dictionary .container {
+    width: 80%;
+  }
 }
 
-.dictionary {
-  margin: 30px 0px 0px 0px;
-  color: var(--text-color);
-  font-family: "Poppins", "Montserrat", Helvetica, sans-serif;
+.card {
+  display: block;
+  margin: 20px auto;
+  width: 45%;
+  min-width: 500px;
+  max-width: 500px;
+  border-radius: 25px;
+  box-shadow: 3px 3px 3px rgba(175, 175, 167, 0.5);
+  border: 3px solid #0000;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px 30px;
+}
+
+.dictionary input {
+  color: #666463;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: block;
+  border: 1px solid #c2c0bf;
+  width: 37%;
+  margin: 0 auto;
+  outline: none;
+  min-width: 400px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  opacity: 0.5;
 }
