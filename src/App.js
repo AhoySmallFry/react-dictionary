@@ -14,7 +14,21 @@ function App() {
         </main>
 
         <footer className="Footer">
-          <small>Coded by Jordana Makin</small>
+          <a
+            href="https://github.com/AhoySmallFry/react-dictionary"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open source code{" "}
+          </a>{" "}
+          by{" "}
+          <a
+            href="https://www.linkedin.com/in/jordanamakin/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Jordana Makin
+          </a>{" "}
         </footer>
       </div>
     </div>
