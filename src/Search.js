@@ -8,6 +8,7 @@ export default function Search(props) {
   console.log(props.defaultSearchTerm);
   let [searchTerm, setsearchTerm] = useState(props.defaultSearchTerm);
   let [results, setResults] = useState(null);
+  let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
 
   function handleResponse(response) {
@@ -18,9 +19,7 @@ export default function Search(props) {
     setPhotos(response.data.photos);
   }
 
-  function LookUp(event) {
-    event.preventDefault();
-
+  function LookUp() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`;
     axios.get(apiUrl).then(handleResponse);
 
@@ -34,22 +33,33 @@ export default function Search(props) {
   function handleSearchTermChange(event) {
     setsearchTerm(event.target.value);
   }
-  return (
-    <div className="dictionary">
-      <form onSubmit={LookUp}>
-        <input
-          type="search"
-          placeholder="Find meaning..."
-          autoComplete="off"
-          onChange={handleSearchTermChange}
-        />
-      </form>
-      <div className="card">
-        <Results data={results} />
+
+  function load() {
+    setLoaded(true);
+    LookUp();
+  }
+
+  if (loaded) {
+    return (
+      <div className="dictionary">
+        <form onSubmit={LookUp}>
+          <input
+            type="search"
+            placeholder="Find meaning..."
+            autoComplete="off"
+            onChange={handleSearchTermChange}
+          />
+        </form>
+        <div className="card">
+          <Results data={results} />
+        </div>
+        <div className="photos">
+          <Photos photos={photos} />
+        </div>
       </div>
-      <div className="photos">
-        <Photos photos={photos} />
-      </div>
-    </div>
-  );
+    );
+  } else {
+    load();
+    return "Loading...";
+  }
 }
