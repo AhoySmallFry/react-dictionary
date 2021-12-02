@@ -30,6 +30,11 @@ export default function Search(props) {
     axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    LookUp();
+  }
+
   function handleSearchTermChange(event) {
     setsearchTerm(event.target.value);
   }
@@ -42,7 +47,7 @@ export default function Search(props) {
   if (loaded) {
     return (
       <div className="dictionary">
-        <form onSubmit={LookUp}>
+        <form onSubmit={handleSubmit}>
           <input
             type="search"
             placeholder="Find meaning..."
